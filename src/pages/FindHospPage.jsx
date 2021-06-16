@@ -100,6 +100,8 @@ const FindHospPage = observer(() => {
   };
   const refreshFilter = () => {
     setAge_brand();
+    setTypesValue();
+    history.push(`hospital`);
   };
   return (
     <>
