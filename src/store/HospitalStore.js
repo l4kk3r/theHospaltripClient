@@ -7,6 +7,7 @@ export default class UserStore {
     this._types = [];
     this._department = [];
     this._selectedCountries = "";
+    this._selectedTypes = "";
     makeAutoObservable(this);
   }
 
@@ -25,6 +26,9 @@ export default class UserStore {
   setSelectedCountries(countries) {
     this._selectedCountries = countries;
   }
+  setSelectedTypes(selectedTypes) {
+    this._selectedTypes = selectedTypes;
+  }
 
   get hospitalsss() {
     return this._hospitals;
@@ -40,5 +44,8 @@ export default class UserStore {
   }
   get selectedCountriesss() {
     return this._selectedCountries;
+  }
+  get selectedTypesss() {
+    return this._selectedTypes;
   }
 }

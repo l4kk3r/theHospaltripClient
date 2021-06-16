@@ -17,7 +17,7 @@ import { Context } from "./index";
 const App = observer(() => {
   const { hosp } = useContext(Context);
   useEffect(() => {
-    getAllHospital(null).then((data) => hosp.setHospitals(data.hospitals));
+    getAllHospital(null , null).then((data) => hosp.setHospitals(data.hospitals));
     getAllCountries().then((data) => hosp.setCountries(data.countries));
     getAllTypes().then((data) => hosp.setTypes(data.hospitaltypes));
     getAllDepartment().then((data) => hosp.setDepartment(data.departments));

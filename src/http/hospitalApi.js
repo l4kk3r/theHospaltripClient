@@ -1,9 +1,10 @@
 import { $authHost, $host } from "./index";
 
-export const getAllHospital = async (country) => {
+export const getAllHospital = async (country, hospitalType) => {
   const { data } = await $host.get("hospital/", {
     params: {
       country,
+      hospitalType,
     },
   });
   return data;

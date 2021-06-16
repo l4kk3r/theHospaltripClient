@@ -44,24 +44,52 @@ const FindHospPage = observer(() => {
   const history = useHistory();
   const [value, setValue] = useState(30);
   const [valueRange, setValueRange] = useState([20, 337]);
-  const [countriesValue, setCountriesValue] = useState();
+  const [typesValue, setTypesValue] = useState("");
   const [age_brand, setAge_brand] = useState("");
   const query = useQueryParams();
 
   const queryCountry = query.get("country");
-  console.log("w", queryCountry);
+  const queryType = query.get("type");
+
   const handleChangeSelBrand = (event) => {
     setAge_brand(event.target.value);
-    history.push("?country=" + event.target.value);
+    if (!queryType) {
+      history.push("?country=" + event.target.value);
+    } else
+      history.push(
+        `hospital?country=` + event.target.value + `&type=` + typesValue
+      );
+
     hosp.setSelectedCountries(event.target.value);
+  };
+  const handleChangeSelTypes = (event) => {
+    console.log("wdwd", age_brand);
+    setTypesValue(event.target.value);
+    if (!age_brand) {
+      history.push(`hospital?type=` + event.target.value);
+    } else
+      history.push(
+        `hospital?country=` + age_brand + `&type=` + event.target.value
+      );
+
+    hosp.setSelectedTypes(event.target.value);
   };
 
   useEffect(() => {
     //console.log("wdwd", age_brand);
-    getAllHospital(queryCountry).then((data) =>
-      hosp.setHospitals(data.hospitals)
-    );
-  }, [age_brand]);
+    try {
+      getAllHospital(queryCountry, queryType)
+        .then((data) => hosp.setHospitals(data.hospitals))
+        .catch(function (error) {
+          if (error.response) {
+            //alert(error.response.data.message);
+            alert(error.response.data.message);
+          }
+        });
+    } catch (e) {
+      console.log(e.message);
+    }
+  }, [age_brand, typesValue, queryType, queryCountry]);
 
   const handleSliderChange = (event, newValue) => {
     setValue(newValue);
@@ -73,7 +101,6 @@ const FindHospPage = observer(() => {
   const refreshFilter = () => {
     setAge_brand();
   };
-
   return (
     <>
       <div className="findHospPage">
@@ -168,7 +195,11 @@ const FindHospPage = observer(() => {
                 </button>
               </div>
               <div className="bubble-r-box">
-                <select className="bubble-element_isprav ">
+                <select
+                  className="bubble-element_isprav "
+                  value={typesValue}
+                  onChange={handleChangeSelTypes}
+                >
                   <option
                     className="dropdown-choice_dropdown-placeholder"
                     value=""
@@ -241,7 +272,9 @@ const FindHospPage = observer(() => {
             </div>
           </div>
           <div className="countries_isprav_border_none">
-            <p className="findHospPage_second_d_p">36 Results found!</p>
+            <p className="findHospPage_second_d_p">
+              {hosp.hospitalsss.length} Results found!
+            </p>
           </div>
           <div className="countries_isprav_border_none_align">
             <button className="button_log_butt" onClick={refreshFilter}>
