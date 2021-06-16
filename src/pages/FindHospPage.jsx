@@ -99,8 +99,8 @@ const FindHospPage = observer(() => {
     setValueRange(newValue);
   };
   const refreshFilter = () => {
-    setAge_brand();
-    setTypesValue();
+    setAge_brand("");
+    setTypesValue("");
     history.push(`hospital`);
   };
   return (
@@ -171,7 +171,7 @@ const FindHospPage = observer(() => {
                     value=""
                     disabled=""
                   >
-                    All countries
+                    {queryCountry ? queryCountry : "All countries"}
                   </option>
 
                   {hosp.countriesss.map((country) => (
@@ -207,7 +207,7 @@ const FindHospPage = observer(() => {
                     value=""
                     disabled=""
                   >
-                    All types of hospitals
+                    {queryType ? queryType : "All types of hospitals"}
                   </option>
 
                   {hosp.typesss.map((types) => (
