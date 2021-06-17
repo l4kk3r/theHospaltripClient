@@ -137,7 +137,14 @@ const HospPage = observer(() => {
                   also provide a full range of health care services, including
                   inpatient, outpatient, and emergency care, as well as highly
                   specialized diagnostic and treatment procedures with the most
-                  up-to-date medical equipments.
+                  up-to-date medical equipments. medical equipments. global
+                  network of medical services throughout Asia and the Unites
+                  States. Although our hospital is renowned for its outstanding
+                  OB/GYN and Fertility Center we also provide a full range of
+                  health care services, including inpatient, outpatient, and
+                  emergency care, as well as highly specialized diagnostic and
+                  treatment procedures with the most up-to-date medical
+                  equipments.
                 </p>
               </div>
             </div>
