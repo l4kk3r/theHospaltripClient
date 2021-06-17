@@ -2287,6 +2287,10 @@ justify-content: center;
   .findHospPage_first_position{
     position: relative;
   }
+  /* .hospPage{
+    padding: 90px 20px 40px 20px;
+    background-color: rgb(250, 250, 250);
+  } */
   .hospPage{
     padding: 90px 80px 40px 80px;
     background-color: rgb(250, 250, 250);
@@ -2376,7 +2380,8 @@ justify-content: center;
  }
  .hospPage_content_details_title{
    display: flex;
-   align-items: center;
+   align-items:center;
+   
    
  }
  .hospPage_content_details_title_icon{
@@ -2436,4 +2441,112 @@ justify-content: center;
     min-width:300px;
    
     margin: 10px;
+}
+.hospPage_content_second_column_p{
+  font-weight: 900;
+  font-family: Bahnschrift; 
+  font-size: 23px;
+  margin: 0;
+  color: #fff;
+}
+.hospPage_content_second_column_con{
+  text-align: center;
+  align-items: center;
+  background-color:    rgb(71, 157, 131)  ;
+}
+.hospPage_content_second_column_a{
+  font-weight: 400;
+  font-family: Bahnschrift; 
+  font-size: 18px;
+  color: #fff;
+}
+.green{
+  background-color:    rgb(71, 157, 131)  ;
+
+}
+.hospPage_content_details_green{
+  margin: 30px 0  30px 0;
+  padding: 15px;
+  background-color:    rgb(71, 157, 131)  ;
+}
+.hospPage_content_details_title_align{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  
+}
+.hospPage_content_info_description_title_button{
+  padding: 4px 15px;
+  border: none;
+  border-radius: 2px;
+  background: none rgb(255, 222, 89); 
+
+}
+.countries_isprav_hos_page{
+ 
+
+  box-sizing: border-box;
+  height: 50px;
+  
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(230, 230, 230); 
+  border-radius: 3px;
+  margin: 10px;
+}
+.countries_isprav_hos_page_plus{
+ 
+
+  box-sizing: border-box;
+  height: 56px;
+  
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(230, 230, 230); 
+  border-radius: 3px;
+  margin: 10px;
+}
+.hospPage_second_col_div{
+  
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.hospPage_second_col_div_padd{
+  padding: 0 10px;
+  margin-top: 10px;
+}
+.countries_isprav_hos_page_button_from_hos{
+  width: 100%;
+  height: 100%;
+  border: none;
+  color: #fff;
+  background-color:    rgb(71, 157, 131)  ;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 600;
+  font-family: Bahnschrift; 
+  cursor: pointer;
+}
+.hospPage_secondc_profile_item{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.hospPage_secondc_profile_item_icon{
+  font-size: 20px !important;
+  margin-bottom: -4px;
+}
+.hospPage_secondc_profile_item_p{
+  font-weight: 400;
+  margin: 9px 0 9px 9px;
+  font-family: Bahnschrift; 
+
+}
+.hospPage_secondc_profile_item:hover{
+  color: rgb(230, 70, 42);
+  transition: 0.3s;
+}
+.hospPage_secondc_profile_list{
+  margin-top: 10px;
 }

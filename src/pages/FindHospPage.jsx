@@ -280,7 +280,7 @@ const FindHospPage = observer(() => {
           </div>
           <div className="countries_isprav_border_none_align">
             <button className="button_log_butt" onClick={refreshFilter}>
-              REFRESH
+              Reset all
             </button>
           </div>
         </div>
